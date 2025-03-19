@@ -1,3 +1,4 @@
+theme: "minimal-mistakes-jekyll"
 markdown: kramdown
 highlighter: rouge
     input: GFM
