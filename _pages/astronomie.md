@@ -1,4 +1,5 @@
-title: "Ostatní"
+---
+title: "Astronomie"
 permalink: /astronomy/
 author_profile: false
 ---
