@@ -79,7 +79,7 @@ author:
 footer:
   links:
     - label: "Gitlab"
-      icon: "fas fa-fw fa-link"
+      icon: "fas fa-fw fa-gitlab"
       url: "https://gitlab.com/monkey265"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
