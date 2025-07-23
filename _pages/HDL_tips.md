@@ -1,6 +1,6 @@
 ---
 title: "HDL tips & tricks"
-permalink: /HDL_tips/
+permalink: /hdl_tips/
 author_profile: false
 ---
 
