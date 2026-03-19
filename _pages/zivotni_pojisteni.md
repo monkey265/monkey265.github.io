@@ -8,6 +8,9 @@ Bohužel jsem měl tu čest a řešil jsem životní pojištění. Hrabal jsem s
 
 Tak alespoň sepíšu co si tak nějak pamatuju.
 
+> [!warning] Preview
+> **Pozor, tohle je preview! Nemám to ještě hotové a není to final verze.**
+
 # Spořicí část 
 ---
 Velmi často pojišťovák hned nutí spořicí životní pojištění.
@@ -94,6 +97,7 @@ Pobyty v nemocnici, totální kravina co zdražuje smlouvu a neslouží pořádn
 | Pracovní neschopnost   | Volitelné                     |
 
 ## Dítě
+
 | Riziko                 | Typ                         |
 | ---------------------- | --------------------------- |
 | Smrt                   | Neřešit!                    |
