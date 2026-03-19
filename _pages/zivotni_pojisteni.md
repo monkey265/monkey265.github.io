@@ -9,7 +9,7 @@ Bohužel jsem měl tu čest a řešil jsem životní pojištění. Hrabal jsem s
 Tak alespoň sepíšu co si tak nějak pamatuju.
 
 > [!warning] Preview
-> **Pozor, tohle je preview! Nemám to ještě hotové a není to final verze.**
+> **Pozor, tohle je preview! Nemám to ještě hotové a není to final verze. Konkrétně ohledně invalidity u dítěte jsem ještě na vážkách zda se to vyplatí nebo ne.**
 
 # Spořicí část 
 ---
