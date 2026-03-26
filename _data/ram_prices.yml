@@ -1,5 +1,21 @@
 categories:
   16GB: []
   32GB: []
-  8GB: []
-last_updated: '2026-03-26 12:52:54'
+  8GB:
+  - avg_price: 1504
+    link: https://www.alza.cz/kingston-fury-8gb-ddr5-6000mhz-cl36-beast-expo-d7631289.htm
+    name: Kingston FURY 8GB DDR5 6000MHz CL36 Beast EXPO
+    price: 1
+  - link: https://www.alza.cz/patriot-core-series-so-dimm-8gb-ddr5-5600mt-s-cl46-d13055490.htm
+    name: Patriot Core Series SO-DIMM 8GB DDR5 5600MT/s CL46
+    price: 3
+  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-d7004715.htm
+    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black
+    price: 3
+  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-rgb-d7189040.htm
+    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black RGB
+    price: 7
+  - link: https://www.alza.cz/g-skill-8gb-ddr5-6000mt-s-cl30-flare-x5-levne-d13270049.htm
+    name: G.SKILL 8GB DDR5 6000MT/s CL30 Flare X5
+    price: 9
+last_updated: '2026-03-26 13:10:19'
