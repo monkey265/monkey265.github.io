@@ -17,5 +17,21 @@ categories:
   - link: https://www.alza.cz/corsair-32gb-kit-ddr5-6000mhz-cl36-vengeance-grey-expo-d8577443.htm
     name: Corsair 32GB KIT DDR5 6000MHz CL36 Vengeance Grey EXPO
     price: 8990
-  8GB: []
-last_updated: '2026-03-26 13:17:35'
+  8GB:
+  - avg_price: 2981
+    link: https://www.alza.cz/corsair-so-dimm-8gb-ddr5-4800mhz-cl40-vengeance-d7175691.htm
+    name: Corsair SO-DIMM 8GB DDR5 4800MHz CL40 Vengeance
+    price: 2759
+  - link: https://www.alza.cz/patriot-signature-line-8gb-ddr5-5600mt-s-cl46-d13191640.htm
+    name: Patriot Signature Line 8GB DDR5 5600MT/s CL46
+    price: 2859
+  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-d7004715.htm
+    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black
+    price: 2899
+  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-rgb-d7189040.htm
+    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black RGB
+    price: 2899
+  - link: https://www.alza.cz/kingston-8gb-ddr5-5600mt-s-cl46-valueram-d13175869.htm
+    name: Kingston 8GB DDR5 5600MT/s CL46 ValueRAM
+    price: 2969
+last_updated: '2026-03-26 13:17:46'
