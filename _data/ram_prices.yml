@@ -1,53 +1,5 @@
 categories:
-  16GB:
-  - avg_price: 5281
-    link: https://www.alza.cz/patriot-core-series-so-dimm-16gb-ddr5-5600mt-s-cl46-d13055487.htm
-    name: Patriot Core Series SO-DIMM 16GB DDR5 5600MT/s CL46
-    price: 4290
-  - link: https://www.alza.cz/crucial-so-dimm-16gb-ddr5-5600mhz-cl46-d7987956.htm
-    name: Crucial SO-DIMM 16GB DDR5 5600MHz CL46
-    price: 4490
-  - link: https://www.alza.cz/patriot-signature-line-so-dimm-16gb-ddr5-5600mt-s-cl46-d13055479.htm
-    name: Patriot Signature Line SO-DIMM 16GB DDR5 5600MT/s CL46
-    price: 4590
-  - link: https://www.alza.cz/patriot-viper-elite-5-ultra-16gb-ddr5-6000mt-s-cl36-d13195874.htm
-    name: Patriot Viper Elite 5 Ultra 16GB DDR5 6000MT/s CL36
-    price: 4590
-  - link: https://www.alza.cz/adata-xpg-16gb-ddr5-6000mt-s-cl48-lancer-blade-rgb-black-d12437482.htm
-    name: ADATA XPG 16GB DDR5 6000MT/s CL48 Lancer Blade RGB Black
-    price: 4690
-  32GB:
-  - avg_price: 9936
-    link: https://www.alza.cz/patriot-signature-line-so-dimm-32gb-ddr5-5600mt-s-cl46-d13055480.htm
-    name: Patriot Signature Line SO-DIMM 32GB DDR5 5600MT/s CL46
-    price: 6990
-  - link: https://www.alza.cz/patriot-core-series-so-dimm-32gb-ddr5-5600mt-s-cl46-d13055486.htm
-    name: Patriot Core Series SO-DIMM 32GB DDR5 5600MT/s CL46
-    price: 7190
-  - link: https://www.alza.cz/crucial-so-dimm-32gb-ddr5-5600mhz-cl46-d7987969.htm
-    name: Crucial SO-DIMM 32GB DDR5 5600MHz CL46
-    price: 8190
-  - link: https://www.alza.cz/crucial-32gb-ddr5-5600mhz-cl46-d13227097.htm
-    name: Crucial 32GB DDR5 5600MHz CL46
-    price: 8449
-  - link: https://www.alza.cz/corsair-32gb-kit-ddr5-6000mhz-cl36-vengeance-grey-expo-d8577443.htm
-    name: Corsair 32GB KIT DDR5 6000MHz CL36 Vengeance Grey EXPO
-    price: 8990
-  8GB:
-  - avg_price: 2945
-    link: https://www.alza.cz/patriot-signature-line-8gb-ddr5-5600mt-s-cl46-levne-d13200921.htm
-    name: Patriot Signature Line 8GB DDR5 5600MT/s CL46
-    price: 2569
-  - link: https://www.alza.cz/corsair-so-dimm-8gb-ddr5-4800mhz-cl40-vengeance-d7175691.htm
-    name: Corsair SO-DIMM 8GB DDR5 4800MHz CL40 Vengeance
-    price: 2759
-  - link: https://www.alza.cz/patriot-signature-line-8gb-ddr5-5600mt-s-cl46-d13191640.htm
-    name: Patriot Signature Line 8GB DDR5 5600MT/s CL46
-    price: 2859
-  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-d7004715.htm
-    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black
-    price: 2899
-  - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-rgb-d7189040.htm
-    name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black RGB
-    price: 2899
-last_updated: '2026-03-26 10:47:33'
+  16GB: []
+  32GB: []
+  8GB: []
+last_updated: '2026-03-26 11:51:58'
