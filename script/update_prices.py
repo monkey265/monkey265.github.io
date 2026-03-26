@@ -3,27 +3,10 @@ import datetime
 import yaml
 import subprocess
 import sys
-
-# Ensure Playwright browsers are installed
-def ensure_playwright():
-    print("Checking for Playwright browsers...")
-    try:
-        # Try a dummy launch to see if chromium is there
-        from playwright.sync_api import sync_playwright
-        with sync_playwright() as p:
-            try:
-                p.chromium.launch(headless=True).close()
-            except:
-                print("Chromium not found. Installing...")
-                subprocess.run([sys.executable, "-m", "playwright", "install", "chromium"], check=True)
-    except Exception as e:
-        print(f"Playwright dependency check failed: {e}. Ensure 'playwright' pip package is installed.")
-
-ensure_playwright()
-
 from playwright.sync_api import sync_playwright
 
 # Configuration
+BROWSER_WS_ENDPOINT = "ws://localhost:3500"
 CATEGORIES = {
     "8GB": "https://www.alza.cz/pameti-ddr5-8-gb/18897000.htm",
     "16GB": "https://www.alza.cz/pameti-ddr5-16-gb/18896987.htm",
@@ -82,7 +65,13 @@ def main():
     }
     
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        print(f"Connecting to Browserless at {BROWSER_WS_ENDPOINT}...")
+        try:
+            browser = p.chromium.connect(BROWSER_WS_ENDPOINT)
+        except Exception as e:
+            print(f"Failed to connect to Browserless: {e}")
+            return
+        
         context = browser.new_context(
             user_agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
             viewport={'width': 1920, 'height': 1080}
