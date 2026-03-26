@@ -23,23 +23,47 @@ document.addEventListener("DOMContentLoaded", function() {
   const labels = historyData.map(entry => entry.date);
   const datasets = [
     {
-      label: '8GB Lowest Price (CZK)',
-      data: historyData.map(entry => entry['8GB']),
+      label: '8GB Min (CZK)',
+      data: historyData.map(entry => entry['8GB_min']),
       borderColor: 'rgb(255, 99, 132)',
       tension: 0.1,
       fill: false
     },
     {
-      label: '16GB Lowest Price (CZK)',
-      data: historyData.map(entry => entry['16GB']),
+      label: '8GB Avg (CZK)',
+      data: historyData.map(entry => entry['8GB_avg']),
+      borderColor: 'rgb(255, 99, 132)',
+      borderDash: [5, 5],
+      tension: 0.1,
+      fill: false
+    },
+    {
+      label: '16GB Min (CZK)',
+      data: historyData.map(entry => entry['16GB_min']),
       borderColor: 'rgb(54, 162, 235)',
       tension: 0.1,
       fill: false
     },
     {
-      label: '32GB Lowest Price (CZK)',
-      data: historyData.map(entry => entry['32GB']),
+      label: '16GB Avg (CZK)',
+      data: historyData.map(entry => entry['16GB_avg']),
+      borderColor: 'rgb(54, 162, 235)',
+      borderDash: [5, 5],
+      tension: 0.1,
+      fill: false
+    },
+    {
+      label: '32GB Min (CZK)',
+      data: historyData.map(entry => entry['32GB_min']),
       borderColor: 'rgb(75, 192, 192)',
+      tension: 0.1,
+      fill: false
+    },
+    {
+      label: '32GB Avg (CZK)',
+      data: historyData.map(entry => entry['32GB_avg']),
+      borderColor: 'rgb(75, 192, 192)',
+      borderDash: [5, 5],
       tension: 0.1,
       fill: false
     }
