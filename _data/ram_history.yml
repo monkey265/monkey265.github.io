@@ -14,6 +14,8 @@
   date: '2026-03-25'
 - 16GB_avg: 2629
   16GB_min: 1
+  32GB_avg: 6083
+  32GB_min: 1
   8GB_avg: 1504
   8GB_min: 1
   date: '2026-03-26'
