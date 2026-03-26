@@ -30,7 +30,8 @@ CATEGORIES = {
     "32GB": "https://www.alza.cz/pameti-ram-ddr5-32-gb/18896986.htm"
 }
 
-REPO_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+# Absolute paths for Home Assistant environment
+REPO_DIR = "/homeassistant/gitrepos/monkey265.github.io"
 DATA_FILE = os.path.join(REPO_DIR, "_data/ram_prices.yml")
 HISTORY_FILE = os.path.join(REPO_DIR, "_data/ram_history.yml")
 PAGES_DIR = os.path.join(REPO_DIR, "_pages")
