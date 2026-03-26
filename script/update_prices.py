@@ -3,73 +3,180 @@ import datetime
 import yaml
 import subprocess
 import requests
+import cloudscraper
+import re
 from bs4 import BeautifulSoup
 
 # Configuration
-# For Browserless Add-on, the host is usually the add-on name or localhost
-BROWSERLESS_ENDPOINT = "http://localhost:3000/content" 
+# No longer using Browserless. Cloudscraper handles anti-bot measures.
 CATEGORIES = {
     "8GB": "https://www.alza.cz/pameti-ddr5-8-gb/18897000.htm",
     "16GB": "https://www.alza.cz/pameti-ddr5-16-gb/18896987.htm",
     "32GB": "https://www.alza.cz/pameti-ram-ddr5-32-gb/18896986.htm"
 }
 
-# Absolute paths for Home Assistant environment
-REPO_DIR = "/homeassistant/gitrepos/monkey265.github.io"
+# Absolute paths for environment (auto-detecting repo root)
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_DIR = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 DATA_FILE = os.path.join(REPO_DIR, "_data/ram_prices.yml")
 HISTORY_FILE = os.path.join(REPO_DIR, "_data/ram_history.yml")
 PAGES_DIR = os.path.join(REPO_DIR, "_pages")
 
-def scrape_category_via_browserless(url):
-    print(f"Requesting content for {url} via Browserless...")
+def ensure_authenticated_remote():
+    """Checks if the remote URL includes a token, updates it if GITHUB_TOKEN is available."""
+    token = os.environ.get("GITHUB_TOKEN")
+    if not token:
+        print("Note: GITHUB_TOKEN not found in environment. Skipping remote URL update.")
+        return
+
     try:
-        # Browserless /content endpoint returns raw HTML after processing JS
-        response = requests.post(
-            BROWSERLESS_ENDPOINT,
-            json={"url": url},
-            headers={"Content-Type": "application/json"},
-            timeout=60
-        )
-        response.raise_for_status()
-        html = response.text
-        
+        # Get current remote URL
+        current_url = subprocess.run(
+            ["git", "remote", "get-url", "origin"],
+            cwd=REPO_DIR, capture_output=True, text=True, check=True
+        ).stdout.strip()
+
+        # If token is already in any part of the URL, do nothing
+        if token in current_url:
+            return
+
+        # Prepare new URL (assumes github.com)
+        if "github.com" in current_url:
+            # Extract path like 'user/repo'
+            path = current_url.split("github.com/")[-1].replace(".git", "")
+            new_url = f"https://{token}@github.com/{path}.git"
+            
+            print(f"Updating git remote to include security token...")
+            subprocess.run(["git", "remote", "set-url", "origin", new_url], cwd=REPO_DIR, check=True)
+            
+    except Exception as e:
+        print(f"Failed to check/update git remote: {e}")
+
+def scrape_category_via_cloudscraper(scraper, url, max_retries=3):
+    print(f"Requesting content for {url} via Cloudscraper...")
+    
+    for attempt in range(max_retries):
+        try:
+            response = scraper.get(url, timeout=30)
+            
+            if response.status_code == 403:
+                print(f"Attempt {attempt + 1}: Received 403 Forbidden. Retrying in {5 * (attempt + 1)}s...")
+                import time
+                time.sleep(5 * (attempt + 1))
+                continue
+                
+            response.raise_for_status()
+            html = response.text
+            break # Success
+        except Exception as e:
+            if attempt == max_retries - 1:
+                print(f"Error scraping {url} after {max_retries} attempts: {e}")
+                return []
+            print(f"Attempt {attempt + 1} failed: {e}. Retrying...")
+            import time
+            time.sleep(2)
+    else:
+        return []
+
+    try:
+        # Strategy 1: Look for JSON-LD embedded data (very reliable)
+        import json
+        try:
+            # Look for hydration-marker with categoryJsonLd component
+            pattern = r'data-component="categoryJsonLd"\s+data-initialdata="([^"]+)"'
+            match = re.search(pattern, html)
+            if match:
+                # Unescape HTML entities in the JSON string
+                import html as html_lib
+                json_raw = html_lib.unescape(match.group(1))
+                data = json.loads(json_raw)
+                json_items = data.get("items", [])
+                
+                if json_items:
+                    print(f"Found {len(json_items)} items via JSON-LD.")
+                    items = []
+                    for item in json_items:
+                        items.append({
+                            "name": item.get("name"),
+                            "price": item.get("price"),
+                            "link": item.get("url") if item.get("url").startswith("http") else "https://www.alza.cz" + item.get("url")
+                        })
+                    items.sort(key=lambda x: x['price'])
+                    return items
+        except Exception as je:
+            print(f"JSON-LD extraction failed, falling back to HTML: {je}")
+
+        # Strategy 2: HTML Parsing (fallback)
         soup = BeautifulSoup(html, 'html.parser')
-        product_boxes = soup.select(".box.browsingitem.js-box")
-        items = []
+        product_boxes = soup.select(".box.browsingitem, .item.browsingitem, [data-testid='product-card']")
         
+        if not product_boxes:
+            product_boxes = soup.find_all("div", class_=lambda c: c and ("product" in c or "item" in c))
+            
+        print(f"Found {len(product_boxes)} potential product boxes via HTML.")
+        
+        items = []
         for box in product_boxes:
-            name_el = box.select_one("a.name.browsinglink.js-box-link")
-            price_el = box.select_one(".js-price-box__primary-price__value")
+            name_el = box.select_one("a.name, .name-container a, .spec-name, [data-testid='product-name']")
+            # Narrowed price selectors to avoid containers that include discounts/original prices
+            price_el = box.select_one(".js-price-box__primary-price__value, .price-box__primary-price__value, .price_withVat, .price-value")
             
             if name_el and price_el:
                 name = name_el.get_text().strip()
-                price_text = price_el.get_text().strip().replace("\xa0", "").replace(" ", "").replace(",-", "")
+                price_text = price_el.get_text().strip().replace("\xa0", "").replace(" ", "").replace(",-", "").replace("Kč", "")
+                
+                # Extract digits only
+                match = re.search(r'(\d[\d\s]*)', price_text)
+                if match:
+                    price_text = match.group(1).replace(" ", "")
+                
                 try:
                     price = int(price_text)
+                    # Ignore ridiculously low prices (unlikely for RAM)
+                    if price < 100:
+                        continue
+                        
                     href = name_el.get('href')
                     items.append({
                         "name": name,
                         "price": price,
                         "link": "https://www.alza.cz" + href if href and not href.startswith("http") else href
                     })
-                except ValueError:
+                except (ValueError, TypeError):
                     continue
         
         items.sort(key=lambda x: x['price'])
         return items
     except Exception as e:
-        print(f"Error scraping {url} via Browserless: {e}")
+        print(f"Error scraping {url} via Cloudscraper: {e}")
         return []
 
 def main():
+    # Verify/Update Git remote if token is provided
+    ensure_authenticated_remote()
+    
     results = {
         "last_updated": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "categories": {}
     }
     
-    for cat_name, url in CATEGORIES.items():
+    # Use a single scraper session for all categories with a specific browser fingerprint
+    scraper = cloudscraper.create_scraper(
+        browser={
+            'browser': 'chrome',
+            'platform': 'linux',
+            'desktop': True
+        }
+    )
+    
+    for i, (cat_name, url) in enumerate(CATEGORIES.items()):
+        if i > 0:
+            import time
+            print(f"Inter-category delay (3s)...")
+            time.sleep(3) # Small delay to avoid triggering rate limits
+            
         print(f"Scraping {cat_name}...")
-        all_items = scrape_category_via_browserless(url)
+        all_items = scrape_category_via_cloudscraper(scraper, url)
         
         if all_items:
             # Top 5 for the table
@@ -83,6 +190,12 @@ def main():
     
     # Ensure directory exists
     os.makedirs(os.path.dirname(DATA_FILE), exist_ok=True)
+    
+    # Check if we found ANY data at all
+    has_data = any(len(items) > 0 for items in results["categories"].values())
+    if not has_data:
+        print("CRITICAL: Scraping returned NO results for any category. Skipping file update and Git push to prevent overwriting with empty data.")
+        return
     
     # Save latest prices
     with open(DATA_FILE, 'w', encoding='utf-8') as f:
@@ -117,13 +230,31 @@ def main():
     
     # Git Automation
     print("Staging changes...")
+    env = os.environ.copy()
+    env["GIT_TERMINAL_PROMPT"] = "0"  # Prevent git from asking for password/username
+    
     try:
-        subprocess.run(["git", "add", DATA_FILE, HISTORY_FILE, os.path.join(PAGES_DIR, "ram-prices.md")], cwd=REPO_DIR, check=True)
-        status = subprocess.run(["git", "status", "--porcelain"], cwd=REPO_DIR, capture_output=True, text=True).stdout
+        # Add files
+        subprocess.run(["git", "add", DATA_FILE, HISTORY_FILE, os.path.join(PAGES_DIR, "ram-prices.md")], 
+                       cwd=REPO_DIR, env=env, check=True)
+        
+        # Check for changes
+        status = subprocess.run(["git", "status", "--porcelain"], 
+                                cwd=REPO_DIR, env=env, capture_output=True, text=True).stdout
+        
         if status:
             print("Committing and pushing...")
-            subprocess.run(["git", "commit", "-m", f"Auto-update RAM prices and history: {results['last_updated']}"], cwd=REPO_DIR, check=True)
-            subprocess.run(["git", "push", "origin", "main"], cwd=REPO_DIR, check=True)
+            subprocess.run(["git", "commit", "-m", f"Auto-update RAM prices and history: {results['last_updated']}"], 
+                           cwd=REPO_DIR, env=env, check=True)
+            
+            # Push with verbose error output
+            result = subprocess.run(["git", "push", "origin", "main"], 
+                                   cwd=REPO_DIR, env=env, capture_output=True, text=True)
+            
+            if result.returncode != 0:
+                print(f"Git push failed:\n{result.stderr}")
+            else:
+                print("Push successful.")
         else:
             print("No changes detected.")
     except Exception as e:
