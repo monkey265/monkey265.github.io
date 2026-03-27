@@ -10,3 +10,9 @@ author_profile: false
 - [FPGA resources](https://jcada.cz/fpga_res)
 
 
+
+## Visualizace
+
+- [RAM prices](https://jcada.cz/ram-prices)
+
+
