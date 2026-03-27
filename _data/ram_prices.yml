@@ -1,6 +1,6 @@
 categories:
   16GB:
-  - avg_price: 5234
+  - avg_price: 5321
     link: https://www.alza.cz/patriot-core-series-so-dimm-16gb-ddr5-5600mt-s-cl46-d13055487.htm
     name: Patriot Core Series SO-DIMM 16GB DDR5 5600MT/s CL46
     price: 4290
@@ -17,7 +17,7 @@ categories:
     name: ADATA XPG 16GB DDR5 6000MT/s CL48 Lancer Blade RGB Black
     price: 4690
   32GB:
-  - avg_price: 9936
+  - avg_price: 9940
     link: https://www.alza.cz/patriot-signature-line-so-dimm-32gb-ddr5-5600mt-s-cl46-d13055480.htm
     name: Patriot Signature Line SO-DIMM 32GB DDR5 5600MT/s CL46
     price: 6990
@@ -50,4 +50,4 @@ categories:
   - link: https://www.alza.cz/kingston-8gb-ddr5-5600mt-s-cl46-valueram-d13175869.htm
     name: Kingston 8GB DDR5 5600MT/s CL46 ValueRAM
     price: 2969
-last_updated: '2026-03-26 17:18:14'
+last_updated: '2026-03-27 06:41:03'
