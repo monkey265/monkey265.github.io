@@ -10,9 +10,18 @@ from bs4 import BeautifulSoup
 # Configuration
 # No longer using Browserless. Cloudscraper handles anti-bot measures.
 CATEGORIES = {
-    "8GB": "https://www.alza.cz/pameti-ddr5-8-gb/18897000.htm",
-    "16GB": "https://www.alza.cz/pameti-ddr5-16-gb/18896987.htm",
-    "32GB": "https://www.alza.cz/pameti-ram-ddr5-32-gb/18896986.htm"
+    "8GB": [
+        "https://www.alza.cz/pameti-ddr5-8-gb/18897000.htm",
+        "https://www.datart.cz/pameti-ram-ddr5-8-gb.html"
+    ],
+    "16GB": [
+        "https://www.alza.cz/pameti-ddr5-16-gb/18896987.htm",
+        "https://www.datart.cz/pameti-ram-ddr5-16-gb.html"
+    ],
+    "32GB": [
+        "https://www.alza.cz/pameti-ram-ddr5-32-gb/18896986.htm",
+        "https://www.datart.cz/pameti-ram-ddr5-32-gb.html"
+    ]
 }
 
 # Absolute paths for environment (auto-detecting repo root)
@@ -52,7 +61,7 @@ def ensure_authenticated_remote():
     except Exception as e:
         print(f"Failed to check/update git remote: {e}")
 
-def scrape_category_via_cloudscraper(scraper, url, max_retries=3):
+def scrape_category_via_cloudscraper_alza(scraper, url, max_retries=3):
     print(f"Requesting content for {url} via Cloudscraper...")
     
     for attempt in range(max_retries):
@@ -151,6 +160,73 @@ def scrape_category_via_cloudscraper(scraper, url, max_retries=3):
         print(f"Error scraping {url} via Cloudscraper: {e}")
         return []
 
+def scrape_category_via_cloudscraper_datart(scraper, url, max_retries=3):
+    print(f"Requesting content for {url} via Cloudscraper (Datart)...")
+    
+    for attempt in range(max_retries):
+        try:
+            response = scraper.get(url, timeout=30)
+            if response.status_code == 403:
+                print(f"Attempt {attempt + 1}: Received 403 Forbidden for Datart. Retrying in {5 * (attempt + 1)}s...")
+                import time
+                time.sleep(5 * (attempt + 1))
+                continue
+            response.raise_for_status()
+            html = response.text
+            break
+        except Exception as e:
+            if attempt == max_retries - 1:
+                print(f"Error scraping Datart {url} after {max_retries} attempts: {e}")
+                return []
+            import time
+            time.sleep(2)
+    else:
+        return []
+
+    try:
+        soup = BeautifulSoup(html, 'html.parser')
+        product_boxes = soup.select(".product-box")
+        print(f"Found {len(product_boxes)} potential product boxes via HTML (Datart).")
+        
+        items = []
+        for box in product_boxes:
+            name_el = box.select_one(".item-title-holder h3 a")
+            price_el = box.select_one("[data-qa='actual-price'], .actual")
+            
+            if name_el and price_el:
+                name = name_el.get_text().strip()
+                price_text = price_el.get_text().strip().replace("\xa0", "").replace(" ", "").replace(",-", "").replace("Kč", "")
+                
+                # Extract digits
+                match = re.search(r'(\d[\d\s]*)', price_text)
+                if match:
+                    price_text = match.group(1).replace(" ", "")
+                
+                try:
+                    price = int(price_text)
+                    if price < 100: continue
+                    
+                    href = name_el.get('href')
+                    items.append({
+                        "name": name,
+                        "price": price,
+                        "link": "https://www.datart.cz" + href if href and not href.startswith("http") else href
+                    })
+                except:
+                    continue
+        
+        return items
+    except Exception as e:
+        print(f"Error parsing Datart {url}: {e}")
+        return []
+
+def scrape_url(scraper, url):
+    if "alza.cz" in url:
+        return scrape_category_via_cloudscraper_alza(scraper, url)
+    elif "datart.cz" in url:
+        return scrape_category_via_cloudscraper_datart(scraper, url)
+    return []
+
 def main():
     # Verify/Update Git remote if token is provided
     ensure_authenticated_remote()
@@ -169,21 +245,31 @@ def main():
         }
     )
     
-    for i, (cat_name, url) in enumerate(CATEGORIES.items()):
+    for i, (cat_name, urls) in enumerate(CATEGORIES.items()):
         if i > 0:
             import time
             print(f"Inter-category delay (3s)...")
-            time.sleep(3) # Small delay to avoid triggering rate limits
+            time.sleep(3)
             
-        print(f"Scraping {cat_name}...")
-        all_items = scrape_category_via_cloudscraper(scraper, url)
-        
-        if all_items:
-            # Top 5 for the table
-            results["categories"][cat_name] = all_items[:5]
+        print(f"Scraping {cat_name} from {len(urls)} sources...")
+        merged_items = []
+        for url in urls:
+            items = scrape_url(scraper, url)
+            if items:
+                merged_items.extend(items)
+            # Small delay between same-category sources
+            import time
+            time.sleep(1)
             
-            # Average calculation
-            avg_price = int(sum(item['price'] for item in all_items) / len(all_items))
+        if merged_items:
+            # Sort by price ascending
+            merged_items.sort(key=lambda x: x['price'])
+            
+            # Top 5 overall
+            results["categories"][cat_name] = merged_items[:5]
+            
+            # Average calculation across ALL found items
+            avg_price = int(sum(item['price'] for item in merged_items) / len(merged_items))
             results["categories"][cat_name][0]["avg_price"] = avg_price
         else:
             results["categories"][cat_name] = []
