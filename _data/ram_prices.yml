@@ -1,6 +1,6 @@
 categories:
   16GB:
-  - avg_price: 5322
+  - avg_price: 5559
     link: https://www.alza.cz/patriot-core-series-so-dimm-16gb-ddr5-5600mt-s-cl46-d13055487.htm
     name: Patriot Core Series SO-DIMM 16GB DDR5 5600MT/s CL46
     price: 4190
@@ -17,7 +17,7 @@ categories:
     name: Patriot Viper Venom 16GB DDR5 6000MT/s CL30
     price: 4690
   32GB:
-  - avg_price: 10116
+  - avg_price: 10599
     link: https://www.alza.cz/patriot-signature-line-so-dimm-32gb-ddr5-5600mt-s-cl46-d13055480.htm
     name: Patriot Signature Line SO-DIMM 32GB DDR5 5600MT/s CL46
     price: 6890
@@ -27,14 +27,14 @@ categories:
   - link: https://www.alza.cz/crucial-so-dimm-32gb-ddr5-5600mhz-cl46-d7987969.htm
     name: Crucial SO-DIMM 32GB DDR5 5600MHz CL46
     price: 8190
+  - link: https://www.datart.cz/bazar/operacni-pamet-kingston-fury-beast-black-expo-32gb-ddr5-6000mhz-cl30-kf560c30bbe-32-rozbaleno-24-mesicu-zaruka
+    name: Operační paměť Kingston FURY Beast Black EXPO 32GB DDR5 6000MHz CL30
+    price: 8963
   - link: https://www.alza.cz/patriot-viper-venom-32gb-kit-ddr5-6000mhz-cl30-d12440050.htm
     name: Patriot Viper Venom 32GB KIT DDR5 6000MHz CL30
     price: 9190
-  - link: https://www.alza.cz/crucial-overclocking-pro-32gb-kit-ddr5-6400mhz-cl38-white-d12681287.htm
-    name: Crucial Overclocking Pro 32GB KIT DDR5 6400MHz CL38 White
-    price: 9490
   8GB:
-  - avg_price: 2942
+  - avg_price: 2974
     link: https://www.alza.cz/corsair-so-dimm-8gb-ddr5-4800mhz-cl40-vengeance-d7175691.htm
     name: Corsair SO-DIMM 8GB DDR5 4800MHz CL40 Vengeance
     price: 2690
@@ -50,4 +50,4 @@ categories:
   - link: https://www.alza.cz/kingston-fury-8gb-ddr5-5200mhz-cl40-beast-black-d7004715.htm
     name: Kingston FURY 8GB DDR5 5200MHz CL40 Beast Black
     price: 2899
-last_updated: '2026-03-30 09:49:26'
+last_updated: '2026-03-30 10:01:28'
