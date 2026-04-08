@@ -89,3 +89,10 @@
   8GB_avg: 3093
   8GB_min: 2939
   date: '2026-04-07'
+- 16GB_avg: 5746
+  16GB_min: 4990
+  32GB_avg: 10802
+  32GB_min: 8152
+  8GB_avg: 3176
+  8GB_min: 2999
+  date: '2026-04-08'
