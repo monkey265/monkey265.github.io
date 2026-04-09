@@ -11,8 +11,8 @@ author_profile: false
 
 Ideální by bylo jet konec srpna, aby bylo na vrcholu co nejméně sněhu. Po cestě je bouda kde bychom přespali a druhý den. Cesta autem je cca 6 hodin.
 
-[Odkaz na mapy](https://mapy.com/s/hebasekeke)
-[Odkaz na chalupu](https://www.hut-reservation.org/reservation/book-hut/152/wizard)
+- [Odkaz na mapy](https://mapy.com/s/hebasekeke)
+- [Odkaz na chalupu](https://www.hut-reservation.org/reservation/book-hut/152/wizard)
 
 ## Itenerář
 
