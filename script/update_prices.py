@@ -3,9 +3,8 @@ import datetime
 import yaml
 import subprocess
 import requests
-import cloudscraper
 import re
-from bs4 import BeautifulSoup
+import json
 
 # Configuration
 # No longer using Browserless. Cloudscraper handles anti-bot measures.
@@ -61,171 +60,114 @@ def ensure_authenticated_remote():
     except Exception as e:
         print(f"Failed to check/update git remote: {e}")
 
-def scrape_category_via_cloudscraper_alza(scraper, url, max_retries=3):
-    print(f"Requesting content for {url} via Cloudscraper...")
-    
-    for attempt in range(max_retries):
-        try:
-            response = scraper.get(url, timeout=30)
-            
-            if response.status_code == 403:
-                print(f"Attempt {attempt + 1}: Received 403 Forbidden. Retrying in {5 * (attempt + 1)}s...")
-                import time
-                time.sleep(5 * (attempt + 1))
-                continue
-                
-            response.raise_for_status()
-            html = response.text
-            break # Success
-        except Exception as e:
-            if attempt == max_retries - 1:
-                print(f"Error scraping {url} after {max_retries} attempts: {e}")
-                return []
-            print(f"Attempt {attempt + 1} failed: {e}. Retrying...")
-            import time
-            time.sleep(2)
-    else:
-        return []
+import cloudscraper
 
+def scrape_alza(scraper, url):
+    """Scrapes Alza using cloudscraper and hydration-marker JSON parsing."""
+    print(f"Requesting Alza content for {url}...")
     try:
-        # Strategy 1: Look for JSON-LD embedded data (very reliable)
-        import json
-        try:
-            # Look for hydration-marker with categoryJsonLd component
-            pattern = r'data-component="categoryJsonLd"\s+data-initialdata="([^"]+)"'
-            match = re.search(pattern, html)
-            if match:
-                # Unescape HTML entities in the JSON string
-                import html as html_lib
-                json_raw = html_lib.unescape(match.group(1))
-                data = json.loads(json_raw)
-                json_items = data.get("items", [])
-                
-                if json_items:
-                    print(f"Found {len(json_items)} items via JSON-LD.")
-                    items = []
-                    for item in json_items:
+        response = scraper.get(url, timeout=30)
+        response.raise_for_status()
+        html = response.text
+        
+        items = []
+        # Strategy: Alza Hydration Markers
+        # These markers contain a 'categoryJsonLd' component with 'items'
+        marker_match = re.search(r'data-component="categoryJsonLd"[^>]+data-initialdata="({.*?})"', html)
+        if marker_match:
+            try:
+                # Decode HTML entities and parse JSON
+                json_str = marker_match.group(1).replace("&quot;", "\"")
+                data = json.loads(json_str)
+                for item in data.get("items", []):
+                    name = item.get("name")
+                    price = item.get("price")
+                    link = item.get("url", "")
+                    if name and price:
                         items.append({
-                            "name": item.get("name"),
-                            "price": item.get("price"),
-                            "link": item.get("url") if item.get("url").startswith("http") else "https://www.alza.cz" + item.get("url")
+                            "name": name,
+                            "price": int(price),
+                            "link": link if link.startswith("http") else f"https://www.alza.cz{link}",
+                            "source": "alza"
                         })
-                    items.sort(key=lambda x: x['price'])
-                    return items
-        except Exception as je:
-            print(f"JSON-LD extraction failed, falling back to HTML: {je}")
+            except Exception as e:
+                print(f"Failed to parse Alza marker: {e}")
 
-        # Strategy 2: HTML Parsing (fallback)
-        soup = BeautifulSoup(html, 'html.parser')
-        product_boxes = soup.select(".box.browsingitem, .item.browsingitem, [data-testid='product-card']")
-        
-        if not product_boxes:
-            product_boxes = soup.find_all("div", class_=lambda c: c and ("product" in c or "item" in c))
-            
-        print(f"Found {len(product_boxes)} potential product boxes via HTML.")
-        
-        items = []
-        for box in product_boxes:
-            name_el = box.select_one("a.name, .name-container a, .spec-name, [data-testid='product-name']")
-            # Narrowed price selectors to avoid containers that include discounts/original prices
-            price_el = box.select_one(".js-price-box__primary-price__value, .price-box__primary-price__value, .price_withVat, .price-value")
-            
-            if name_el and price_el:
-                name = name_el.get_text().strip()
-                price_text = price_el.get_text().strip().replace("\xa0", "").replace(" ", "").replace(",-", "").replace("Kč", "")
-                
-                # Extract digits only
-                match = re.search(r'(\d[\d\s]*)', price_text)
-                if match:
-                    price_text = match.group(1).replace(" ", "")
-                
+        if not items:
+            # Fallback Grid parsing (more robust)
+            matches = re.findall(r'class="name browsinglink js-box-link"[^>]+href="([^"]+)"[^>]*>([^<]+)</a>.*?class="price-box">.*?class="actual">([^<]+)</span>', html, re.DOTALL)
+            for href, name, price_str in matches:
                 try:
-                    price = int(price_text)
-                    # Ignore ridiculously low prices (unlikely for RAM)
-                    if price < 100:
-                        continue
-                        
-                    href = name_el.get('href')
-                    items.append({
-                        "name": name,
-                        "price": price,
-                        "link": "https://www.alza.cz" + href if href and not href.startswith("http") else href
-                    })
-                except (ValueError, TypeError):
-                    continue
-        
-        items.sort(key=lambda x: x['price'])
+                    price = int(re.sub(r'[^\d]', '', price_str))
+                    if price > 100:
+                        items.append({
+                            "name": name.strip(),
+                            "price": price,
+                            "link": href if href.startswith("http") else f"https://www.alza.cz{href}",
+                            "source": "alza"
+                        })
+                except: continue
+                
+        print(f"Found {len(items)} items from Alza.")
         return items
     except Exception as e:
-        print(f"Error scraping {url} via Cloudscraper: {e}")
+        print(f"Alza scrape failed: {e}")
         return []
 
-def scrape_category_via_cloudscraper_datart(scraper, url, max_retries=3):
-    print(f"Requesting content for {url} via Cloudscraper (Datart)...")
-    
-    for attempt in range(max_retries):
-        try:
-            response = scraper.get(url, timeout=30)
-            if response.status_code == 403:
-                print(f"Attempt {attempt + 1}: Received 403 Forbidden for Datart. Retrying in {5 * (attempt + 1)}s...")
-                import time
-                time.sleep(5 * (attempt + 1))
-                continue
-            response.raise_for_status()
-            html = response.text
-            break
-        except Exception as e:
-            if attempt == max_retries - 1:
-                print(f"Error scraping Datart {url} after {max_retries} attempts: {e}")
-                return []
-            import time
-            time.sleep(2)
-    else:
-        return []
+def scrape_datart(scraper, url):
+  """Scrapes Datart using cloudscraper and GTM data attribute parsing."""
+  print(f"Requesting Datart content for {url}...")
+  try:
+      response = scraper.get(url, timeout=30)
+      response.raise_for_status()
+      html = response.text
+      
+      items = []
+      # Strategy: data-gtm-data-product attributes
+      matches = re.findall(r'data-gtm-data-product=["\']({.*?})["\']', html)
+      for match in matches:
+          try:
+              # HTML entities decode manually for simple cases
+              decoded = match.replace("&quot;", "\"").replace("&amp;", "&")
+              data = json.loads(decoded)
+              name = data.get("item_name")
+              price = data.get("price")
+              # Try to find a link nearby in the HTML if possible, or just use the category URL
+              if name and price:
+                  items.append({
+                      "name": name,
+                      "price": int(price),
+                      "link": url, # Fallback to category URL
+                      "source": "datart"
+                  })
+          except: continue
+          
+      if not items:
+          # Fallback HTML split regex
+          blocks = html.split('class="product-box"')
+          for block in blocks[1:]:
+              name_match = re.search(r'class="item-title".*?href="([^"]+)".*?>([^<]+)</a>', block, re.DOTALL)
+              price_match = re.search(r'class="actual".*?>([^<]+)</span>', block, re.DOTALL)
+              if name_match and price_match:
+                  try:
+                      price = int(re.sub(r'[^\d]', '', price_match.group(1)))
+                      items.append({
+                          "name": name_match.group(2).strip(),
+                          "price": price,
+                          "link": f"https://www.datart.cz{name_match.group(1)}" if not name_match.group(1).startswith("http") else name_match.group(1),
+                          "source": "datart"
+                      })
+                  except: continue
 
-    try:
-        soup = BeautifulSoup(html, 'html.parser')
-        product_boxes = soup.select(".product-box")
-        print(f"Found {len(product_boxes)} potential product boxes via HTML (Datart).")
-        
-        items = []
-        for box in product_boxes:
-            name_el = box.select_one(".item-title-holder h3 a")
-            price_el = box.select_one("[data-qa='actual-price'], .actual")
-            
-            if name_el and price_el:
-                name = name_el.get_text().strip()
-                price_text = price_el.get_text().strip().replace("\xa0", "").replace(" ", "").replace(",-", "").replace("Kč", "")
-                
-                # Extract digits
-                match = re.search(r'(\d[\d\s]*)', price_text)
-                if match:
-                    price_text = match.group(1).replace(" ", "")
-                
-                try:
-                    price = int(price_text)
-                    if price < 100: continue
-                    
-                    href = name_el.get('href')
-                    items.append({
-                        "name": name,
-                        "price": price,
-                        "link": "https://www.datart.cz" + href if href and not href.startswith("http") else href
-                    })
-                except:
-                    continue
-        
-        return items
-    except Exception as e:
-        print(f"Error parsing Datart {url}: {e}")
-        return []
-
-def scrape_url(scraper, url):
-    if "alza.cz" in url:
-        return scrape_category_via_cloudscraper_alza(scraper, url)
-    elif "datart.cz" in url:
-        return scrape_category_via_cloudscraper_datart(scraper, url)
-    return []
+      # Inject source if missing
+      for item in items:
+          if "source" not in item:
+              item["source"] = "datart"
+              
+      return items
+  except Exception as e:
+      print(f"Datart scrape failed: {e}")
+      return []
 
 def main():
     # Verify/Update Git remote if token is provided
@@ -236,7 +178,7 @@ def main():
         "categories": {}
     }
     
-    # Use a single scraper session for all categories with a specific browser fingerprint
+    # Initialize robust scraper
     scraper = cloudscraper.create_scraper(
         browser={
             'browser': 'chrome',
@@ -248,16 +190,23 @@ def main():
     for i, (cat_name, urls) in enumerate(CATEGORIES.items()):
         if i > 0:
             import time
-            print(f"Inter-category delay (3s)...")
-            time.sleep(3)
+            print(f"Inter-category delay (2s)...")
+            time.sleep(2)
             
-        print(f"Scraping {cat_name} from {len(urls)} sources...")
+        print(f"Updating {cat_name} from {len(urls)} sources...")
         merged_items = []
+        
         for url in urls:
-            items = scrape_url(scraper, url)
+            items = []
+            if "alza.cz" in url:
+                items = scrape_alza(scraper, url)
+            elif "datart.cz" in url:
+                items = scrape_datart(scraper, url)
+                
             if items:
                 merged_items.extend(items)
-            # Small delay between same-category sources
+            
+            # Politeness delay
             import time
             time.sleep(1)
             
@@ -265,10 +214,10 @@ def main():
             # Sort by price ascending
             merged_items.sort(key=lambda x: x['price'])
             
-            # Top 5 overall
-            results["categories"][cat_name] = merged_items[:5]
+            # Top 10 overall
+            results["categories"][cat_name] = merged_items[:10]
             
-            # Average calculation across ALL found items
+            # Average calculation for all items found in this category
             avg_price = int(sum(item['price'] for item in merged_items) / len(merged_items))
             results["categories"][cat_name][0]["avg_price"] = avg_price
         else:
@@ -297,15 +246,26 @@ def main():
     today_entry = {"date": today}
     for cat_name, items in results["categories"].items():
         if items:
+            # Overall min and avg (legacy)
             today_entry[f"{cat_name}_min"] = items[0]["price"]
             avg_price = items[0].get("avg_price", items[0]["price"]) 
             today_entry[f"{cat_name}_avg"] = avg_price
+            
+            # Shop specific minimums
+            alza_items = [i for i in items if i.get("source") == "alza"]
+            datart_items = [i for i in items if i.get("source") == "datart"]
+            
+            if alza_items:
+                today_entry[f"{cat_name}_alza"] = min(i["price"] for i in alza_items)
+            if datart_items:
+                today_entry[f"{cat_name}_datart"] = min(i["price"] for i in datart_items)
     
     # Update or append
     updated = False
     for i, entry in enumerate(history):
         if entry.get("date") == today:
-            history[i] = today_entry
+            # Merge keys to preserve old data if partial update
+            history[i].update(today_entry)
             updated = True
             break
     if not updated:
