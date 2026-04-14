@@ -1,14 +1,16 @@
 ---
 permalink: /ram-prices/
-title: "DDR5 RAM Price Tracker (Alza.cz)"
+title: "DDR5 RAM Price Tracker (Alza & Datart)"
 ---
 
-This page displays the latest DDR5 RAM prices scraped daily from Alza.cz and visualizes price trends.
+This page displays the latest DDR5 RAM prices aggregated from Alza.cz and Datart.cz via the Hlídač Shopů API.
 
 <!-- Chart.js setup -->
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div style="width: 100%; margin: 20px 0;">
-  <canvas id="ramPriceChart"></canvas>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; margin: 20px 0;">
+  <div><canvas id="chart8GB"></canvas></div>
+  <div><canvas id="chart16GB"></canvas></div>
+  <div><canvas id="chart32GB"></canvas></div>
 </div>
 
 <script>
@@ -16,90 +18,55 @@ document.addEventListener("DOMContentLoaded", function() {
   const historyData = {{ site.data.ram_history | jsonify }};
   
   if (!historyData || historyData.length === 0) {
-    document.getElementById('ramPriceChart').parentElement.innerHTML = '<p>No history data available yet to render graph.</p>';
+    document.querySelector('.grid').innerHTML = '<p>No history data available yet to render graphs.</p>';
     return;
   }
 
   const labels = historyData.map(entry => entry.date);
-  const datasets = [
-    {
-      label: '8GB Min (CZK)',
-      data: historyData.map(entry => entry['8GB_min']),
-      borderColor: 'rgb(255, 99, 132)',
-      tension: 0.1,
-      fill: false
-    },
-    {
-      label: '8GB Avg (CZK)',
-      data: historyData.map(entry => entry['8GB_avg']),
-      borderColor: 'rgb(255, 99, 132)',
-      borderDash: [5, 5],
-      tension: 0.1,
-      fill: false
-    },
-    {
-      label: '16GB Min (CZK)',
-      data: historyData.map(entry => entry['16GB_min']),
-      borderColor: 'rgb(54, 162, 235)',
-      tension: 0.1,
-      fill: false
-    },
-    {
-      label: '16GB Avg (CZK)',
-      data: historyData.map(entry => entry['16GB_avg']),
-      borderColor: 'rgb(54, 162, 235)',
-      borderDash: [5, 5],
-      tension: 0.1,
-      fill: false
-    },
-    {
-      label: '32GB Min (CZK)',
-      data: historyData.map(entry => entry['32GB_min']),
-      borderColor: 'rgb(75, 192, 192)',
-      tension: 0.1,
-      fill: false
-    },
-    {
-      label: '32GB Avg (CZK)',
-      data: historyData.map(entry => entry['32GB_avg']),
-      borderColor: 'rgb(75, 192, 192)',
-      borderDash: [5, 5],
-      tension: 0.1,
-      fill: false
-    }
-  ];
 
-  new Chart(document.getElementById('ramPriceChart'), {
-    type: 'line',
-    data: {
-      labels: labels,
-      datasets: datasets
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        title: {
-          display: true,
-          text: 'DDR5 RAM Price Trends (Lowest per Category)'
-        }
+  function createChart(canvasId, category, color) {
+    const ctx = document.getElementById(canvasId).getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [
+          {
+            label: `${category} Min (CZK)`,
+            data: historyData.map(entry => entry[`${category}_min`]),
+            borderColor: color,
+            backgroundColor: color.replace('1)', '0.1)'),
+            tension: 0.1,
+            fill: false
+          },
+          {
+            label: `${category} Avg (CZK)`,
+            data: historyData.map(entry => entry[`${category}_avg`]),
+            borderColor: color,
+            borderDash: [5, 5],
+            tension: 0.1,
+            fill: false
+          }
+        ]
       },
-      scales: {
-        y: {
-          beginAtZero: false,
+      options: {
+        responsive: true,
+        plugins: {
           title: {
             display: true,
-            text: 'Price (CZK)'
+            text: `${category} DDR5 Trend`
           }
         },
-        x: {
-          title: {
-            display: true,
-            text: 'Date'
-          }
+        scales: {
+          y: { beginAtZero: false }
         }
       }
-    }
-  });
+    });
+  }
+
+  createChart('chart8GB', '8GB', 'rgba(255, 99, 132, 1)');
+  createChart('chart16GB', '16GB', 'rgba(54, 162, 235, 1)');
+  createChart('chart32GB', '32GB', 'rgba(75, 192, 192, 1)');
 });
 </script>
 
