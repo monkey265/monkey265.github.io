@@ -144,13 +144,16 @@
   8GB_datart: 2937
   8GB_min: 2937
   date: '2026-04-14'
-- 16GB_avg: 5692
+- 16GB_alza: 4689
+  16GB_avg: 5630
   16GB_datart: 4990
-  16GB_min: 4990
-  32GB_avg: 10920
-  32GB_datart: 9290
-  32GB_min: 9290
-  8GB_avg: 3144
+  16GB_min: 4689
+  32GB_alza: 9590
+  32GB_avg: 10895
+  32GB_datart: 8152
+  32GB_min: 8152
+  8GB_alza: 2899
+  8GB_avg: 3133
   8GB_datart: 2937
-  8GB_min: 2937
+  8GB_min: 2899
   date: '2026-04-15'
