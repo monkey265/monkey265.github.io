@@ -8,8 +8,7 @@ author_profile: false
 - [Calibre](https://calibre.jcadahoass.uk)
 - [Questa docs](https://jcada.cz/questa_docs)
 - [FPGA resources](https://jcada.cz/fpga_res)
-
-
+- [Electronic warfare quick guide](../pdfs/ew-quick-guide-pdf.pdf)
 
 ## Visualizace
 
