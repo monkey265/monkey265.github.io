@@ -53,25 +53,35 @@ Proto si myslím že je dobrý deal členství v rakouském horském klubu. Cenu
 
 **Pozor ale! členství je subscription jak netflix a musí se pak zrušit jinak vám to strhnou další rok!**
 
-## Vybavení
+Alternativní pojištění : [zde](https://www.horske-zazitky.cz/pojisteni/)
 
-Pokud pojedeme na konci léta tak není nutné mít mačky ani cepín. **Určitě je nutné mít helmu**.
-Fajn je mít také hůlky pro přidanou stabilitu na hřebenu.
-
-Co si beru já:
-
+## Vybavení s sebou
+---
 - Opalovací krém 50+
-- Čelovka
+- **Čelovka** (budeme vycházet za šera)
+- Sluneční brýle (musí být kategorie 4) [decathlon odkaz](https://www.decathlon.cz/vsechny-sporty/turistika/turisticke-slunecni-bryle/f-kategorie-skel_kategorie-2-4_kategorie-4)[nebo tady]([https://www.decathlon.cz/p/slunecni-bryle-mh-900-kategorie-4-hd/_/R-p-350960?mc=8844569&c=%C4%8CERN%C3%81](https://www.decathlon.cz/vsechny-sporty/beh/bezecke-slunecni-bryle/f-kategorie-skel_kategorie-2-4_kategorie-4))
 - Lékárnička (zkontrolovat a dokoupit náplasti na puchýře)
 - Hygienické vybavení
 - Powerbanka
 - Láhev (velká)
 - Hůlky
-- Helma (půjčím v hudy)
 - Rychloschnoucí ručník
 - Kartička alpenverien
-- Spacák
-- Vše do chaty
+- Pohorky (navoskovat)
+- Ponožky: Kvalitní merino (tlustší) + tenké linerky (prevence puchýřů).
+- Triko merino
+- Merino boxerky
+- **Rukavice**
+- **Hüttenschlafsack (Vložka do spacáku)** (povlečení do chalupy)
+- Merino svetr
+- Větrovka
+- Hotovost v eurech
+- Krém na rty s sfp [decathlon](https://www.decathlon.cz/vsechny-sporty/zimni-sporty/opalovaci-kremy-a-luje)
+
+## Půjčit s sebou
+- **Helma**
+- **Mačky** (nutné mít kdyby na vrcholu byl led)
+- 
 
 ## Články o výstupu
 
