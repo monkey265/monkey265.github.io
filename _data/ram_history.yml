@@ -237,53 +237,16 @@
   8GB_datart: 2849
   8GB_min: 2849
   date: '2026-04-23'
-- 16GB_avg: 5525
-  16GB_datart: 4790
-  16GB_min: 4790
-  32GB_avg: 10550
-  32GB_datart: 8874
-  32GB_min: 8874
-  8GB_avg: 3050
-  8GB_datart: 2793
-  8GB_min: 2793
-  date: '2026-04-24'
-- 16GB_avg: 5587
-  16GB_datart: 4790
-  16GB_min: 4790
-  32GB_avg: 10528
-  32GB_datart: 8874
-  32GB_min: 8874
-  8GB_avg: 3051
-  8GB_datart: 2793
-  8GB_min: 2793
-  date: '2026-04-25'
-- 16GB_avg: 5570
-  16GB_datart: 4790
-  16GB_min: 4790
-  32GB_avg: 10594
-  32GB_datart: 8990
-  32GB_min: 8990
-  8GB_avg: 3049
-  8GB_datart: 2793
-  8GB_min: 2793
-  date: '2026-04-26'
-- 16GB_avg: 5546
-  16GB_datart: 4790
-  16GB_min: 4790
-  32GB_avg: 10594
-  32GB_datart: 8990
-  32GB_min: 8990
-  8GB_avg: 3049
-  8GB_datart: 2793
-  8GB_min: 2793
-  date: '2026-04-27'
-- 16GB_avg: 5556
+- 16GB_alza: 4689
+  16GB_avg: 5476
   16GB_datart: 4590
   16GB_min: 4590
-  32GB_avg: 10591
-  32GB_datart: 8874
-  32GB_min: 8874
-  8GB_avg: 3047
+  32GB_alza: 9590
+  32GB_avg: 10504
+  32GB_datart: 8990
+  32GB_min: 8990
+  8GB_alza: 2859
+  8GB_avg: 3027
   8GB_datart: 2793
   8GB_min: 2793
-  date: '2026-04-28'
+  date: '2026-04-29'
