@@ -88,3 +88,5 @@ Alternativní pojištění : [zde](https://www.horske-zazitky.cz/pojisteni/)
 - [https://www.summitpost.org/grosses-wiesbachhorn-kaindlgrat/156210]
 - [https://www.zellamsee-kaprun.com/en/tour/718-haushofer-trail-heinrich-schwaiger-house-grosses-wiesbachhorn~10482]
 - [https://www.hiking-trail.net/hiking_trip/kesselfall_grosses_wiesbachhorn/57/2831/6561]
+- [https://www.bergsteigen.com/touren/hochtour/grosses-wiesbachhorn-kaindlgrat/]
+- [Video z výstupu](https://www.youtube.com/watch?v=jVktmiLqz1g)
