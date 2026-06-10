@@ -44,7 +44,7 @@ categories:
     price: 4990
     source: datart
   32GB:
-  - avg_price: 10419
+  - avg_price: 10567
     link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
     name: Operační paměť Kingston FURY Beast Black EXPO 32GB DDR5 6000MHz CL36 (KF560C36BBE-32)
     price: 8990
@@ -67,9 +67,12 @@ categories:
     price: 9490
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
-    name: Operační paměť Kingston FURY Beast White EXPO 32GB (2x16BG) DDR5 6000MHz
-      CL36 (KF560C36BWE2K2-32)
-    price: 9990
+    name: Operační paměť Kingston FURY Beast Black EXPO 32GB DDR5 6000MHz CL30 (KF560C30BBE-32)
+    price: 9490
+    source: datart
+  - link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
+    name: Operační paměť Kingston FURY Beast Black EXPO 32GB DDR5 6000MHz CL30 (KF560C30BBE-32)
+    price: 9490
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
     name: Operační paměť Kingston FURY Beast White EXPO 32GB (2x16BG) DDR5 6000MHz
@@ -82,16 +85,12 @@ categories:
     price: 9990
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
-    name: Operační paměť Kingston FURY Beast Black 32GB (2x16GB) DDR5 5200MHz CL40
-      (KF552C40BBK2-32)
-    price: 9999
-    source: datart
-  - link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
-    name: Operační paměť Kingston FURY Beast Black EXPO 32GB DDR5 6400MHz CL32 (KF564C32BBE-32)
-    price: 10010
+    name: Operační paměť Kingston FURY Beast White EXPO 32GB (2x16BG) DDR5 6000MHz
+      CL36 (KF560C36BWE2K2-32)
+    price: 9990
     source: datart
   8GB:
-  - avg_price: 3849
+  - avg_price: 3848
     link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Impact 8GB DDR5 4800MHz CL 38 (KF548S38IB-8)
     price: 2290
@@ -110,7 +109,7 @@ categories:
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston 8GB DDR5 5600MHz CL46 Non-ECC (KVR56U46BS6-8)
-    price: 2975
+    price: 2959
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston 8GB DDR5 5600MHz CL46 Non-ECC (KVR56S46BS6-8)
@@ -126,10 +125,10 @@ categories:
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Beast Black RGB 8GB DDR5 5200MHz CL40 (KF552C40BBA-8)
-    price: 3114
+    price: 3099
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Beast Black EXPO 8GB DDR5 6000MHz CL36 (KF560C36BBE-8)
     price: 3149
     source: datart
-last_updated: '2026-06-09 08:00:03'
+last_updated: '2026-06-10 08:00:09'
