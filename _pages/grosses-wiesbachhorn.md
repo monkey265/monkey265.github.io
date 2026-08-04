@@ -63,8 +63,7 @@ Alternativní pojištění : [zde](https://www.horske-zazitky.cz/pojisteni/)
 - Lékárnička (zkontrolovat a dokoupit náplasti na puchýře)
 - Hygienické vybavení
 - Powerbanka
-- Láhev (velká)
-- Hůlky
+- Láhev (velká)/camelbak ideálně 
 - Rychloschnoucí ručník
 - Kartička alpenverien
 - Pohorky (navoskovat)
@@ -75,13 +74,14 @@ Alternativní pojištění : [zde](https://www.horske-zazitky.cz/pojisteni/)
 - **Hüttenschlafsack (Vložka do spacáku)** (povlečení do chalupy)
 - Merino svetr
 - Větrovka
-- Hotovost v eurech
+- Hotovost v eurech (80-100 eur)
 - Krém na rty s sfp [decathlon](https://www.decathlon.cz/vsechny-sporty/zimni-sporty/opalovaci-kremy-a-luje)
-
-## Půjčit s sebou
+- cepín 
 - **Helma**
 - **Mačky** (nutné mít kdyby na vrcholu byl led)
-- 
+- Hůlky 
+- Ferratový set
+- Nepromokavá bunda (hardshell)
 
 ## Články o výstupu
 
