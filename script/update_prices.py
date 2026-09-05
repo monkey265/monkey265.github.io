@@ -10,15 +10,12 @@ import json
 # No longer using Browserless. Cloudscraper handles anti-bot measures.
 CATEGORIES = {
     "8GB": [
-        "https://www.alza.cz/pameti-ddr5-8-gb/18897000.htm",
         "https://www.datart.cz/pameti-ram-ddr5-8-gb.html"
     ],
     "16GB": [
-        "https://www.alza.cz/pameti-ddr5-16-gb/18896987.htm",
         "https://www.datart.cz/pameti-ram-ddr5-16-gb.html"
     ],
     "32GB": [
-        "https://www.alza.cz/pameti-ram-ddr5-32-gb/18896986.htm",
         "https://www.datart.cz/pameti-ram-ddr5-32-gb.html"
     ]
 }
@@ -62,57 +59,6 @@ def ensure_authenticated_remote():
 
 import cloudscraper
 
-def scrape_alza(scraper, url):
-    """Scrapes Alza using cloudscraper and hydration-marker JSON parsing."""
-    print(f"Requesting Alza content for {url}...")
-    try:
-        response = scraper.get(url, timeout=30)
-        response.raise_for_status()
-        html = response.text
-        
-        items = []
-        # Strategy: Alza Hydration Markers
-        # These markers contain a 'categoryJsonLd' component with 'items'
-        marker_match = re.search(r'data-component="categoryJsonLd"[^>]+data-initialdata="({.*?})"', html)
-        if marker_match:
-            try:
-                # Decode HTML entities and parse JSON
-                json_str = marker_match.group(1).replace("&quot;", "\"")
-                data = json.loads(json_str)
-                for item in data.get("items", []):
-                    name = item.get("name")
-                    price = item.get("price")
-                    link = item.get("url", "")
-                    if name and price:
-                        items.append({
-                            "name": name,
-                            "price": int(price),
-                            "link": link if link.startswith("http") else f"https://www.alza.cz{link}",
-                            "source": "alza"
-                        })
-            except Exception as e:
-                print(f"Failed to parse Alza marker: {e}")
-
-        if not items:
-            # Fallback Grid parsing (more robust)
-            matches = re.findall(r'class="name browsinglink js-box-link"[^>]+href="([^"]+)"[^>]*>([^<]+)</a>.*?class="price-box">.*?class="actual">([^<]+)</span>', html, re.DOTALL)
-            for href, name, price_str in matches:
-                try:
-                    price = int(re.sub(r'[^\d]', '', price_str))
-                    if price > 100:
-                        items.append({
-                            "name": name.strip(),
-                            "price": price,
-                            "link": href if href.startswith("http") else f"https://www.alza.cz{href}",
-                            "source": "alza"
-                        })
-                except: continue
-                
-        print(f"Found {len(items)} items from Alza.")
-        return items
-    except Exception as e:
-        print(f"Alza scrape failed: {e}")
-        return []
 
 def scrape_datart(scraper, url):
   """Scrapes Datart using cloudscraper and GTM data attribute parsing."""
@@ -198,9 +144,7 @@ def main():
         
         for url in urls:
             items = []
-            if "alza.cz" in url:
-                items = scrape_alza(scraper, url)
-            elif "datart.cz" in url:
+            if "datart.cz" in url:
                 items = scrape_datart(scraper, url)
                 
             if items:
@@ -252,11 +196,8 @@ def main():
             today_entry[f"{cat_name}_avg"] = avg_price
             
             # Shop specific minimums
-            alza_items = [i for i in items if i.get("source") == "alza"]
             datart_items = [i for i in items if i.get("source") == "datart"]
             
-            if alza_items:
-                today_entry[f"{cat_name}_alza"] = min(i["price"] for i in alza_items)
             if datart_items:
                 today_entry[f"{cat_name}_datart"] = min(i["price"] for i in datart_items)
     
