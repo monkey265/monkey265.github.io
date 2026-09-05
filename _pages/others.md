@@ -8,10 +8,12 @@ author_profile: false
 - [Calibre](https://calibre.jcadahoass.uk)
 - [Questa docs](https://jcada.cz/questa_docs)
 - [FPGA resources](https://jcada.cz/fpga_res)
-- [Electronic warfare quick guide](../pdfs/ew-quick-guide-pdf.pdf)
+<!-- - [Electronic warfare quick guide](../pdfs/ew-quick-guide-pdf.pdf) -->
 
 ## Visualizace
 
 - [RAM prices](https://jcada.cz/ram-prices)
 
+## Outdoor
 
+- [Hory](https://jcada.cz/hory)
