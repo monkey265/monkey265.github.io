@@ -1,10 +1,10 @@
 categories:
   16GB:
-  - avg_price: 6419
+  - avg_price: 6408
     link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
     name: Operační paměť Kingston FURY Impact 16GB DDR5 6400MHz CL38 (KF564S38IB-16)
       - rozbaleno - 24 měsíců záruka
-    price: 5270
+    price: 5112
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
     name: Operační paměť Kingston FURY Impact 16GB DDR5 6400MHz CL38 (KF564S38IB-16)
@@ -44,7 +44,7 @@ categories:
     price: 5890
     source: datart
   32GB:
-  - avg_price: 13216
+  - avg_price: 13279
     link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
     name: Operační paměť Kingston FURY Beast Black RGB 32GB (2x16GB) DDR5 5600MHz
       CL40 (KF556C40BBAK2-32)
@@ -96,7 +96,7 @@ categories:
   - avg_price: 4911
     link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Patriot Signature Line 8GB DDR5 4800MHz CL18 (PSD58G480041S)
-    price: 3286
+    price: 3280
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Beast Black EXPO 8GB DDR5 6000MHz CL36 (KF560C36BBE-8)
@@ -137,4 +137,4 @@ categories:
     name: Operační paměť Kingston 48GB DDR5 5600MHz CL46 Non-ECC (KVR56S46BD8-48)
     price: 18290
     source: datart
-last_updated: '2026-09-06 08:00:05'
+last_updated: '2026-09-07 08:00:04'
