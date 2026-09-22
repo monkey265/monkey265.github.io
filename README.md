@@ -1,27 +1,138 @@
-# Minimal Mistakes remote theme starter
+# Jekyll Cheat Sheet & Rules
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
-
-Contains basic configuration to get you a site with:
-
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
-
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+Quick reference for Jekyll and the Minimal Mistakes theme formatting and syntax.
 
 ---
 
-## Troubleshooting
+## 1. Post & Page Conventions
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+### File Naming
+- **Posts** go into `_posts/` with the filename format: `YYYY-MM-DD-title-slug.md` (e.g., `2026-09-22-my-post.md`).
+- **Pages** go into `_pages/` (or root) with standard `.md` naming.
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+### Front Matter
+Every file must start with YAML front matter:
+
+```yaml
+---
+title: "Post Title"
+date: 2026-09-22T19:30:00+02:00
+last_modified_at: 2026-09-22T20:00:00+02:00
+layout: single
+categories:
+  - blog
+tags:
+  - guide
+  - jekyll
+excerpt: "Brief summary for post lists."
+toc: true
+toc_label: "Table of Contents"
+toc_sticky: true
+---
+```
+
+---
+
+## 2. Notices & Callout Boxes (Kramdown)
+
+Append `{: .notice--<type>}` immediately below a paragraph:
+
+```markdown
+**Default Notice:** Simple informational callout box.
+{: .notice}
+
+**Primary Notice:** Primary accent styled notice.
+{: .notice--primary}
+
+**Info Notice:** Blue info style box.
+{: .notice--info}
+
+**Warning Notice:** Yellow/orange warning box.
+{: .notice--warning}
+
+**Danger Notice:** Red alert/danger box.
+{: .notice--danger}
+
+**Success Notice:** Green confirmation box.
+{: .notice--success}
+```
+
+---
+
+## 3. Excerpts & Read More
+
+Split content for blog post previews using `<!--more-->`:
+
+```markdown
+First paragraph visible in archive previews.
+
+<!--more-->
+
+Remaining content only visible on the full post page.
+```
+
+---
+
+## 4. Code Blocks & Highlighting
+
+Fenced code blocks with language syntax highlighting:
+
+````markdown
+```ruby
+def hello(name)
+  puts "Hello, #{name}!"
+end
+```
+
+```bash
+bundle exec jekyll serve
+```
+````
+
+---
+
+## 5. Blockquotes & Citations
+
+```markdown
+> This is a quote from an author.
+> <cite><a href="https://example.com">Author Name</a></cite>
+```
+
+---
+
+## 6. Liquid Tags & Captures
+
+Capture markdown/HTML blocks and render them with Liquid:
+
+```html
+{% capture my_notice %}
+#### Title
+* Bullet point 1
+* Bullet point 2
+{% endcapture %}
+
+<div class="notice--info">{{ my_notice | markdownify }}</div>
+```
+
+To display raw Liquid tags without executing them:
+
+```liquid
+{% raw %}
+{{ variable }}
+{% endraw %}
+```
+
+---
+
+## 7. Useful CLI Commands
+
+```bash
+# Install dependencies
+bundle install
+
+# Run local development server
+bundle exec jekyll serve
+
+# Run with drafts & live reload
+bundle exec jekyll serve --drafts --livereload
+```
