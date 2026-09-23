@@ -17,3 +17,5 @@ Budoucnost však leží v rukou jiné země - Maroka.
 ## Současný cyklus hnojiv
 
 Rostliná produkce vyžaduje primární makroživiny, dusík, fosfor a draslík.
+
+[1](https://www.fluencecorp.com/the-impending-phosphorus-crisis/)
