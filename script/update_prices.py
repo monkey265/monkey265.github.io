@@ -1,4 +1,5 @@
 import os
+import sys
 import datetime
 import yaml
 import subprocess
@@ -240,12 +241,14 @@ def main():
             
             if result.returncode != 0:
                 print(f"Git push failed:\n{result.stderr}")
+                sys.exit(1)
             else:
                 print("Push successful.")
         else:
             print("No changes detected.")
     except Exception as e:
         print(f"Git automation failed: {e}")
+        sys.exit(1)
 
     print(f"Process complete. Data saved and pushed.")
 
