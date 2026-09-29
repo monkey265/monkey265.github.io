@@ -1,6 +1,6 @@
 ---
 title: "Nadcházející fosfátová krize"
-published: false
+published: true
 date: 2026-04-18T15:34:30-04:00
 categories:
   - blog
@@ -18,6 +18,427 @@ Budoucnost však leží v rukou jiné země - Maroka.
 
 Rostliná produkce vyžaduje primární makroživiny, dusík, fosfor a draslík.
 
-![mapa nalezišt fosforu](https://kroki.jcadahoass.uk/vega/svg/eNrNWt1u2zgWvu9TEJ7dJkUTx3KcOOkAu0j_t5l0ss20xXTQC0qiLUYUqaEoT-wib7B9gGJu1sDe9KKYi71b7PTG8XvtISVbkkO58TQttgVai6L48-mc73yHOm9uINT4U-IFJMKNO6gRKBUnd7a2BqSPm32qgtRtUrGVdTCtW4Od5mkieGNDP-qTxJM0VhQa4PGTwcWvSgwmY8QxIyM6HauLX1FPJL3JWLf_7gUoEJJTjtZxqOiATz6gQdJEsVCEe3QyZrpl5EtxSm41szl-ob4KYPT9VstcB4T2AwUNO3kDTpVI6IjoFXDBSfZYQvuwiAQaf4JLhN6Yf-EGx5HpqoZx1tW0DjBLTTP5OcXsAZYw5_ymS7kP92ZDQAvlcarX0EgII56ad4VbwsBRTJw3Y-YSmZQ66rYRjVIVwHx60gNJcPW-ZS2zdiphWsz7KcOyejMi0sNKLLRyrFKZD-ZUbwloEn2J44B6jfmN1_mvc_P_efbEmwK-xINX3NgokHN2WpcAK3CSsFbTPaLcvDv9E5_Bz3arpS8SRWI9yrllLikUVqRVnm2FuTadvWK27PenJ3P-6GT7xVz7V5uq_XX25RGuiGx9zcm-CogKHk7YzD7S2Iefut3wBtpC7cayh5zqQxm51D0FTqKolzJyHyfB1ffmU6E7l4gB9rS9gXY2kNN6bduTK6RP5EvDfGUXWzKNImeqYR0Le2FfihQeKA3V-KZn_jSWDOkJBjRiG5PyAZGqPF4PuJYsGysgXuiKMz0c9HptODrWPO9V6fISTxedirUa7tbjZyw_p_PzeY-MnqpdsraiT-Z-FaIud5-xzvnGktvO8tvtxnl-9_V82sw3aqed-WnNuDPPujzu3KZrhy65Ss3oJb-YT3BjFgayl2ZQXPK-jNWcZNFh4X1BqPGpnml-wxcRNi5fLLhxMFMGW-hYinAyHmEOkgKkxPSjW46QjeOKbNhCT0FjvNePCT8S03dJCFdMTD_SJBSNS3hlpANTa1_Y6bYND3_Tarme32ks7pqRPuG-Zds9yljttqkyRtg4ZDihPRpij-QLIqHRRUKmRXchKbzczP-VEtEmIz1Vut3rJUTfdtrzthj7gGgfGvc2yiu6Z1y3cHPfL8ZJFKBKih6--VPcZ9gl7KHg6iQTVY5T3VD5VrESeBHCJ1WVlAwjVxgN9qYsOOZ0W27V3QOcu_WcpTwqvbLPVrZQ7TojNHvfl7mKLB5wzkv9it_nVd0zNwBYMq43-l-EZCUIU8mWyGl9uanHg9eZbOkfW-b5TcdpRYW6zl6mkBFWVVhn3qRELCq9dX-ihV7uiClXYFJJwyrlFrcwD26NKqPoFVQZpVhB8QxaoIuaSXwSg1ZXyYLwrqrlN1Xhmj15GIhUUreP0U30CHOu4BKtfw_610cHrg97vVWVtdn2h_rZIwwmIKq3mUlZNneb-9VmA_Z2u7m3V2lPgM1Tvcyr05NJQoybbO-1Ks0-UZgav2g8Jac6aZqOYcBknj4lxKcRcMFkLPVMOYdhtP6Xbgv9GfWZcDPSg4RqBLNHJrUaTcaJcCFvKox5Yzmod0WK7kmMa5F7NRkDxeg1nOAAS2zF0AG0diwotrvN1jWi2G7XongClqpIn3rh5HdIJgfSC3S6ifzpbwwlKNbAwHWEfBFLrOcNSYRC6OpO35HpR1jHgWKYKxqmK8B3n2LuBRT2cJjySPNwHY4X_5h84PD-nkz-yzc5XrTVDEin1W52bTh2Foz082Ds1MJ4yCYfLt6aIGpGyBP4i7eweBNMQYv5aQhBbCGn5-KUDlYA7kfqBfgKcN0L0s2YnNrRcpzmts13Wwsgfh5arVq0jiCmm9EWvBWsDeQxShSYlnEds5vhSm7JCXqBGSNDtP4Q4jT1cT27PT85sLrlnmPlNvDKa3RKp57aHtNEwdK9cMGcYL3fFpQG041CEWI_osbwZOoPEUS1FA3APUMpLt5SNnkfAZ6TsU-heXjxlkgN8uTDCpgepFJIMKkTAqmL3uMhBAWmzWx1ZLu7CxDmlrezYJCfh-xOLbIvJr-PYF_cQnYY6bO6jAjTEQH2iwUjF2-5SBRFT1MtCPgKsL0kkHtLjo4DkcQBkCx6SElJ6lggQ-t_83Egtp4rHNyyBwxw3Y4FwE77Ol3XqSe6h1pVAY1luwIjxRAlBsPpWMfhiIJRjkMQFkMEJJRNsUpYuBdQSIDBdY9BYwutPwfoULAlhvYsTez6ZHvbGhF2u83drxIRjnA_0hJPmxOO4ZdCEdW5FfgiB28F5wQnV7BXBT4Kc7xDLhkh4854FSXyEq9pIcfQSYAjzEDkwe8nmOGI1hvbCZ78x4fANEYHcjJ2KbFCuG-XeM51OusSbXIEaZEhHE1gimgNAnETG-eV09-iYcKM-4Yiihk5Q0caiZV89EESUJ8O61XcE8i7gS_rbGy36djixP51qg6nWwvQsYZl-k6PR85iIdX8GwCaLxyjFMVgdR9gEYMUHYTYxauQv5uiH7CEzKgWowf9Yays8LSaLRs8O82dr0P2hOkImon74YLYCER-jECVDphEb8IotUK4xyKFuEtXQOsR7iX1xvRDymmNJe3Zw2Jngew_D6ntWqR-0EetEOrKGVOi9b5xt3HmgMYTi5gIV_eOH60AzgmljPLTyb_kgNZi9JDWORuoLyuhby_44Odh5NRi9ATMR1PP_PNbSclnCmKAHjxH6yGWruCa8CvklGSMr1OpLByQaAP9CInhKlx_IPEZ7OAmuGRMZb2l3ZV4NPnA7LS-2bGn7pvO_nXGRme3FspXOl2XGMQpKtAa6hwJubBy6KWj5ohAWPQvfs2uEhKCJl4lFcDDyb8HWGrh6gWpXCIijknpMLGSCLSsfrm5c62JQD2DHYGUApDshxoCbMrkAGBTNJuBuLyqwlJ0jD19frqKCjsOQD24Qv6yJC7SQOCeSVHGSJI4dRkNrWccoBZsMXKzvX2tQfIqQswMwUiSK1NimA0ILQUgtanBjBhBjhMBXEw76EqYzVT-Y8oYWn9EhOzTZSnSQQr6djKucVKnRnxttp1rxa0-JrzgFPQ3OKGRifOwMEB_TwnRnzq4nxqXBZaTAmQCjgTn5lQjZ8bpbysA-Ez0sR4TrT8F5Ag6opzyfj180KsmUOxaVcfOXm0sXeljiPWUst76HrMUMhr9GqKSHVLYBeSY3yLhByDe8fQj6rZQxPwmUinPMvn1PGu4jSAGQ6fbCK4wXyVcAK-hR4Sewn_rh1Smy8xx-k_YtF8Xe1vNtj2Z2tv5UqAuiR_fzQjwu8ODu9_mOg6dYmgZEJ-RU3MonB25qdz-h_oFcKK03AMrBlHoZcYKFk5XyRlgIwJIA9R0WM-Pz0OJT8H9a7IGG5id7kLzdWJZ7-YHxso2K6rlfU6UAKeRw0LC4GYW4TKcrCSJT8CnYxprE_y-10sCIckSp4akFZJRtD4dE9azH152rO6t48mXM8W9JTlqPkChBt-jGLKt0ByBhIIryk3o1pNHyGxstSMRrCCxR89oQq4EoVGdrybvNZnaz5C6-03bR4fNzpeEsLuUIgXI5Nk4HNyWDcH0AiZS1yPI8zDqtIAfiZIrxZT7gqP7lPTFVYA7ImcUCGT9Lj7F6B5mtKfr7XDdOVzbiiHktq0vBmG9TjzOv8bokeeDzVSjhnKkhQak_88ZE6uk_48p9-tZ7tlM-KFDwfvWyAE4Wd21U3te-fk41UfjZ2KUTMaBTjw4AXEzoDxV2mFnZ8HF0ABakrqJ_nZnpjzQapesAN0h5HYKp2hdzyNOwZozJaBjzkAmigzqbfEQj7AX6Kyb20DttqzG90X9d3fJkXB2jGK-v-qvC2Sgz4TnJ-2Qj2RHMEDuRjDmSIjUdkJsL865_Cm9vJj5R3UCkRm0VXUHpTIoe1FUXvtBWFalYkDeyEB9_cnXPZu7R5muTapWm57FplCEJi-AT_x1H15H1Dy7hW7eRNW24S0LBAt1FBGWoaWMZraArAakKH-QIjJVG3n5Rani4Hxp6Ym1xmRJLcjG5W6myK9aQfbT7UoJ4AaqXr9u2MZZGCOrnUN_RWvfdDqdNXQHfvi-v7bwbF5XVKyRp4xZylRWKNYgIkd3iTV9oo7jqq8pq4e5jldUAHe7XBW5GtDdbjcD2nXdWqCtT_Z6vexJh-i_iw-PILKQs8p7ap3bvK0BvGyK_v7AZiFpcuo3PC-A6lFJXH2Y8ek1Ov8_hmRKxJZY0rxi6I8YU7ZrQ4p6rLMFZIbV28NFkLOgUephWurMJ684rVQCotKzWRj79Hu0FrLVU1ezXe0oYuxRNazaZHNvr9pLCUj-aGwpwpub4Ju170QI7K7w2h2UEbxWBRto7ZU-05w35hEf2k_MFuc3sh1D-yMCkOTVOXlEnXfKQ_B5o1yN9yn7ba_sY5cgJu62e0WIQSR_GmJnaQnhjfMb_wOTCnw2)
+<div id="vis-phosphate-map" style="width: 100%; max-width: 900px; margin: 1.5em auto; overflow-x: auto;"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+<script>
+const vegaSpec = {
+  "$schema": "https://vega.github.io/schema/vega/v5.json",
+  "description": "Světová naleziště fosfátových hornin (aktivní vs. potenciální zdroje).",
+  "width": 800,
+  "height": 450,
+  "autosize": "fit",
+  "signals": [
+    {
+      "name": "type",
+      "value": "equalEarth",
+      "bind": {
+        "input": "select",
+        "name": "Projekce: ",
+        "options": [
+          "equalEarth",
+          "mercator",
+          "naturalEarth1",
+          "orthographic",
+          "albers",
+          "azimuthalEqualArea",
+          "equirectangular"
+        ]
+      }
+    },
+    {
+      "name": "scale",
+      "value": 140,
+      "bind": {"input": "range", "name": "Měřítko: ", "min": 50, "max": 800, "step": 5}
+    },
+    {
+      "name": "rotate0",
+      "value": 0,
+      "bind": {"input": "range", "name": "Rotace X: ", "min": -180, "max": 180, "step": 1}
+    },
+    {
+      "name": "rotate1",
+      "value": 0,
+      "bind": {"input": "range", "name": "Rotace Y: ", "min": -90, "max": 90, "step": 1}
+    }
+  ],
+  "projections": [
+    {
+      "name": "projection",
+      "type": {"signal": "type"},
+      "scale": {"signal": "scale"},
+      "rotate": [
+        {"signal": "rotate0"},
+        {"signal": "rotate1"},
+        0
+      ],
+      "translate": [
+        {"signal": "width / 2"},
+        {"signal": "height / 2"}
+      ]
+    }
+  ],
+  "scales": [
+    {
+      "name": "colorScale",
+      "type": "ordinal",
+      "domain": [
+        "Aktivní / Prokázaná těžba",
+        "Potenciální / Nové / Podmořské ložisko"
+      ],
+      "range": ["#e64a19", "#0097a7"]
+    }
+  ],
+  "legends": [
+    {
+      "fill": "colorScale",
+      "title": "Klasifikace ložisek fosforu",
+      "orient": "bottom-left",
+      "offset": 10,
+      "padding": 6,
+      "fillColor": "#ffffffea",
+      "strokeColor": "#cccccc",
+      "labelFontSize": 11,
+      "titleFontSize": 12,
+      "encode": {
+        "symbols": {
+          "update": {
+            "shape": {"value": "circle"},
+            "stroke": {"value": "#ffffff"},
+            "strokeWidth": {"value": 1}
+          }
+        }
+      }
+    }
+  ],
+  "data": [
+    {
+      "name": "world",
+      "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+      "format": {
+        "type": "topojson",
+        "feature": "countries"
+      }
+    },
+    {
+      "name": "graticule",
+      "transform": [
+        { "type": "graticule" }
+      ]
+    },
+    {
+      "name": "deposits",
+      "values": [
+        {
+          "name": "Khouribga & Ganntour (Oulad Abdoun)",
+          "country": "Maroko",
+          "lon": -6.9,
+          "lat": 32.88,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 380,
+          "details": "Největší světová sedimentární ložiska (>70 % globálních známých zásob)."
+        },
+        {
+          "name": "Bou Craa",
+          "country": "Západní Sahara",
+          "lon": -12.85,
+          "lat": 27.08,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 220,
+          "details": "Strategický povrchový důl s pásovým dopravníkem k pobřeží Atlantiku."
+        },
+        {
+          "name": "Dianchi / Kunming",
+          "country": "Čína (Jün-nan)",
+          "lon": 102.7,
+          "lat": 24.9,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 240,
+          "details": "Klíčové těžiště čínské produkce fosfátových hnojiv."
+        },
+        {
+          "name": "Yichang",
+          "country": "Čína (Chu-pej)",
+          "lon": 111.3,
+          "lat": 30.7,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 200,
+          "details": "Masivní sedimentární pánve střední Číny."
+        },
+        {
+          "name": "Bone Valley (Florida)",
+          "country": "USA",
+          "lon": -81.9,
+          "lat": 27.8,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 180,
+          "details": "Historické těžiště USA; ložiska nízkokadmiové rudy jsou v pokročilém stádiu vyčerpání."
+        },
+        {
+          "name": "Aurora (Severní Karolína)",
+          "country": "USA",
+          "lon": -76.8,
+          "lat": 35.3,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 150,
+          "details": "Významný povrchový důl a chemický uzel společnosti Nutrien."
+        },
+        {
+          "name": "Western Phosphate Field",
+          "country": "USA (Idaho/Utah)",
+          "lon": -111.4,
+          "lat": 42.7,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 140,
+          "details": "Formace Phosphoria s vyššími náklady na těžbu."
+        },
+        {
+          "name": "Chibiny (Poloostrov Kola)",
+          "country": "Rusko",
+          "lon": 33.7,
+          "lat": 67.6,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 240,
+          "details": "Magmatický apatit mimořádné čistoty (téměř bez kadmia)."
+        },
+        {
+          "name": "Wa'ad Al Shamal & Al Jalamid",
+          "country": "Saúdská Arábie",
+          "lon": 39.9,
+          "lat": 31.3,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 220,
+          "details": "Moderní státem dotovaný průmyslový komplex Ma'aden."
+        },
+        {
+          "name": "Eshidiya",
+          "country": "Jordánsko",
+          "lon": 36.1,
+          "lat": 29.9,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 170,
+          "details": "Páteřní exportní zdroj Jordánska u přístavu Akaba."
+        },
+        {
+          "name": "Abu Tartur",
+          "country": "Egypt",
+          "lon": 30.0,
+          "lat": 25.5,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 150,
+          "details": "Velké zásoby sedimentárního fosforitu v egyptské Západní poušti."
+        },
+        {
+          "name": "Gafsa",
+          "country": "Tunisko",
+          "lon": 8.8,
+          "lat": 34.4,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 130,
+          "details": "Tradiční ložiska spravovaná státní společností CPG."
+        },
+        {
+          "name": "Siilinjärvi",
+          "country": "Finsko",
+          "lon": 27.7,
+          "lat": 63.1,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 110,
+          "details": "Jediný aktivní fosfátový důl v EU (karbonatitový komplex s čistým apatitem, Yara)."
+        },
+        {
+          "name": "Araxá & Tapira",
+          "country": "Brazílie",
+          "lon": -46.9,
+          "lat": -19.6,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 160,
+          "details": "Zvětralé karbonatity pro brazilský zemědělský sektor."
+        },
+        {
+          "name": "Bayóvar (Sechura)",
+          "country": "Peru",
+          "lon": -80.8,
+          "lat": -5.8,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 150,
+          "details": "Mladé sedimentární ložisko s nízkými těžebními náklady u Pacifiku."
+        },
+        {
+          "name": "Phalaborwa",
+          "country": "Jihoafrická republika",
+          "lon": 31.1,
+          "lat": -23.9,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 140,
+          "details": "Magmatická tělesa těžená spolu s mědí a vermikulitem."
+        },
+        {
+          "name": "Phosphate Hill (Georgina)",
+          "country": "Austrálie",
+          "lon": 139.9,
+          "lat": -21.9,
+          "status": "Aktivní / Prokázaná těžba",
+          "size": 130,
+          "details": "Vnitrozemská ložiska v Queenslandu pro výrobu amonných fosfátů."
+        },
+        {
+          "name": "Rogaland (Norge Mining)",
+          "country": "Norsko",
+          "lon": 6.0,
+          "lat": 58.4,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 340,
+          "details": "Hlubinná magmatická intruze; odhad až 70 mld. tun rudy (apatit + vanad + titan)."
+        },
+        {
+          "name": "Per Geijer (Kiruna)",
+          "country": "Švédsko",
+          "lon": 20.2,
+          "lat": 67.85,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 160,
+          "details": "Ložisko LKAB; fosfor jako vedlejší produkt těžby magnetitu a vzácných zemin."
+        },
+        {
+          "name": "Novopoltavka",
+          "country": "Ukrajina",
+          "lon": 36.2,
+          "lat": 47.2,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 130,
+          "details": "Apatit-karbonatitové těleso v Záporožské oblasti."
+        },
+        {
+          "name": "Sandpiper (Offshore)",
+          "country": "Namibie (šelf)",
+          "lon": 14.0,
+          "lat": -23.5,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 180,
+          "details": "Mořské fosfátové písky na kontinentálním šelfu."
+        },
+        {
+          "name": "Chatham Rise (Offshore)",
+          "country": "Nový Zéland",
+          "lon": -179.5,
+          "lat": -43.5,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 170,
+          "details": "Hlubokomořské noduly v hloubce cca 400 metrů."
+        },
+        {
+          "name": "Don Diego (Offshore)",
+          "country": "Mexiko (Baja California)",
+          "lon": -112.5,
+          "lat": 25.0,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 150,
+          "details": "Pobřežní mořské sedimenty v zálivu Ulloa."
+        },
+        {
+          "name": "Hinda",
+          "country": "Republika Kongo",
+          "lon": 12.0,
+          "lat": -4.7,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 140,
+          "details": "Rozsáhlé nerozvinuté povrchové ložisko v subsaharské Africe."
+        },
+        {
+          "name": "Karatau (rozvoj hlubinných vrstev)",
+          "country": "Kazachstán",
+          "lon": 70.5,
+          "lat": 43.5,
+          "status": "Potenciální / Nové / Podmořské ložisko",
+          "size": 160,
+          "details": "Fosforitová pánev s významnými zásobami pro hlubinnou těžbu."
+        }
+      ],
+      "transform": [
+        {
+          "type": "geopoint",
+          "projection": "projection",
+          "fields": ["lon", "lat"]
+        },
+        {
+          "type": "filter",
+          "expr": "isValid(datum.x) && isValid(datum.y)"
+        }
+      ]
+    }
+  ],
+  "marks": [
+    {
+      "type": "shape",
+      "from": {"data": "graticule"},
+      "encode": {
+        "update": {
+          "strokeWidth": {"value": 0.6},
+          "stroke": {"value": "#e0e0e0"},
+          "fill": {"value": null}
+        }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    },
+    {
+      "type": "shape",
+      "from": {"data": "world"},
+      "encode": {
+        "update": {
+          "strokeWidth": {"value": 0.8},
+          "stroke": {"value": "#ffffff"},
+          "fill": {"value": "#34495e"},
+          "zindex": {"value": 0}
+        },
+        "hover": {
+          "stroke": {"value": "#e74c3c"},
+          "strokeWidth": {"value": 1.5},
+          "zindex": {"value": 1}
+        }
+      },
+      "transform": [
+        { "type": "geoshape", "projection": "projection" }
+      ]
+    },
+    {
+      "type": "symbol",
+      "from": {"data": "deposits"},
+      "encode": {
+        "update": {
+          "x": {"field": "x"},
+          "y": {"field": "y"},
+          "size": {"field": "size"},
+          "fill": {"scale": "colorScale", "field": "status"},
+          "stroke": {"value": "#ffffff"},
+          "strokeWidth": {"value": 1.5},
+          "opacity": {"value": 0.9},
+          "tooltip": {
+            "signal": "{'Lokalita': datum.name, 'Země': datum.country, 'Status': datum.status, 'Geologický význam': datum.details}"
+          },
+          "zindex": {"value": 2}
+        },
+        "hover": {
+          "stroke": {"value": "#ffeb3b"},
+          "strokeWidth": {"value": 3},
+          "opacity": {"value": 1}
+        }
+      }
+    }
+  ]
+};
+
+vegaEmbed('#vis-phosphate-map', vegaSpec, {
+  renderer: 'svg',
+  actions: {export: true, source: false, compiled: false, editor: true}
+});
+</script>
+
+<noscript>
+  <p><a href="/assets/images/phosphate_deposits.svg"><img src="/assets/images/phosphate_deposits.svg" alt="mapa nalezišt fosforu"></a></p>
+</noscript>
 
 [1](https://www.fluencecorp.com/the-impending-phosphorus-crisis/)
