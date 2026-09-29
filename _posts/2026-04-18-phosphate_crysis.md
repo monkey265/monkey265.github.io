@@ -19,7 +19,10 @@ Budoucnost však leží v rukou jiné země - Maroka.
 
 Rostliná produkce vyžaduje primární makroživiny, dusík, fosfor a draslík.
 
-<div id="vis-phosphate-map" style="width: 100%; margin: 1.5em auto; overflow-x: auto;"></div>
+<div id="vis-phosphate-map" style="width: 100%; margin: 1.5em auto 0.4em auto; overflow-x: auto;"></div>
+<div style="font-size: 0.85em; color: #555; text-align: center; margin: 0 auto 2em auto; background: #f8f9fa; padding: 6px 14px; border-radius: 4px; border: 1px solid #e2e8f0; max-width: 900px;">
+  💡 <strong>Interaktivní mapa:</strong> Kolečkem myši přibližujte/oddalujte (zoom), tažením mapu posouvejte a najetím myší na bod zobrazíte detail ložiska.
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
