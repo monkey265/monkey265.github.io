@@ -1,6 +1,6 @@
 ---
 title: "Nadcházející fosfátová krize"
-published: true
+published: false
 classes: wide
 date: 2026-04-18T15:34:30-04:00
 categories:
