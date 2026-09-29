@@ -1,6 +1,7 @@
 ---
 title: "Nadcházející fosfátová krize"
 published: true
+classes: wide
 date: 2026-04-18T15:34:30-04:00
 categories:
   - blog
@@ -18,7 +19,7 @@ Budoucnost však leží v rukou jiné země - Maroka.
 
 Rostliná produkce vyžaduje primární makroživiny, dusík, fosfor a draslík.
 
-<div id="vis-phosphate-map" style="width: 100%; max-width: 900px; margin: 1.5em auto; overflow-x: auto;"></div>
+<div id="vis-phosphate-map" style="width: 100%; margin: 1.5em auto; overflow-x: auto;"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
 <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
@@ -26,14 +27,65 @@ Rostliná produkce vyžaduje primární makroživiny, dusík, fosfor a draslík.
 const vegaSpec = {
   "$schema": "https://vega.github.io/schema/vega/v5.json",
   "description": "Světová naleziště fosfátových hornin (aktivní vs. potenciální zdroje).",
-  "width": 800,
-  "height": 450,
+  "width": 900,
+  "height": 500,
   "autosize": "fit",
+  "signals": [
+    {
+      "name": "scale",
+      "value": 155,
+      "on": [
+        {
+          "events": {"type": "wheel", "consume": true},
+          "update": "clamp(scale * pow(1.0015, -event.deltaY * pow(16, event.deltaMode)), 80, 4000)"
+        }
+      ]
+    },
+    {
+      "name": "dragStart",
+      "value": null,
+      "on": [
+        {"events": "mousedown", "update": "[x(), y()]"}
+      ]
+    },
+    {
+      "name": "dragAngles",
+      "value": [0, 0],
+      "on": [
+        {"events": "mousedown", "update": "[rotateX, rotateY]"}
+      ]
+    },
+    {
+      "name": "rotateX",
+      "value": 0,
+      "on": [
+        {
+          "events": "[mousedown, window:mouseup] > window:mousemove",
+          "update": "dragAngles[0] + (x() - dragStart[0]) * 180 / (scale * 1.5)"
+        }
+      ]
+    },
+    {
+      "name": "rotateY",
+      "value": 0,
+      "on": [
+        {
+          "events": "[mousedown, window:mouseup] > window:mousemove",
+          "update": "clamp(dragAngles[1] + (dragStart[1] - y()) * 180 / (scale * 1.5), -85, 85)"
+        }
+      ]
+    }
+  ],
   "projections": [
     {
       "name": "projection",
       "type": "equalEarth",
-      "scale": 140,
+      "scale": {"signal": "scale"},
+      "rotate": [
+        {"signal": "rotateX"},
+        {"signal": "rotateY"},
+        0
+      ],
       "translate": [
         {"signal": "width / 2"},
         {"signal": "height / 2"}
