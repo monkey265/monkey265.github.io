@@ -29,50 +29,11 @@ const vegaSpec = {
   "width": 800,
   "height": 450,
   "autosize": "fit",
-  "signals": [
-    {
-      "name": "type",
-      "value": "equalEarth",
-      "bind": {
-        "input": "select",
-        "name": "Projekce: ",
-        "options": [
-          "equalEarth",
-          "mercator",
-          "naturalEarth1",
-          "orthographic",
-          "albers",
-          "azimuthalEqualArea",
-          "equirectangular"
-        ]
-      }
-    },
-    {
-      "name": "scale",
-      "value": 140,
-      "bind": {"input": "range", "name": "Měřítko: ", "min": 50, "max": 800, "step": 5}
-    },
-    {
-      "name": "rotate0",
-      "value": 0,
-      "bind": {"input": "range", "name": "Rotace X: ", "min": -180, "max": 180, "step": 1}
-    },
-    {
-      "name": "rotate1",
-      "value": 0,
-      "bind": {"input": "range", "name": "Rotace Y: ", "min": -90, "max": 90, "step": 1}
-    }
-  ],
   "projections": [
     {
       "name": "projection",
-      "type": {"signal": "type"},
-      "scale": {"signal": "scale"},
-      "rotate": [
-        {"signal": "rotate0"},
-        {"signal": "rotate1"},
-        0
-      ],
+      "type": "equalEarth",
+      "scale": 140,
       "translate": [
         {"signal": "width / 2"},
         {"signal": "height / 2"}
@@ -433,7 +394,7 @@ const vegaSpec = {
 
 vegaEmbed('#vis-phosphate-map', vegaSpec, {
   renderer: 'svg',
-  actions: {export: true, source: false, compiled: false, editor: true}
+  actions: false
 });
 </script>
 
