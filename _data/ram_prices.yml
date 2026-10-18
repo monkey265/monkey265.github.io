@@ -1,11 +1,7 @@
 categories:
   16GB:
-  - avg_price: 7419
+  - avg_price: 7247
     link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
-    name: Operační paměť Kingston FURY Beast Black EXPO 16GB DDR5 5600MHz CL36 (KF556C36BBE-16)
-    price: 5990
-    source: datart
-  - link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
     name: Operační paměť Kingston FURY Impact 16GB DDR5 6000MHz CL38 (KF560S38IB-16)
     price: 5990
     source: datart
@@ -15,6 +11,10 @@ categories:
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
     name: Operační paměť Kingston FURY Impact 16GB DDR5 6000MHz CL38 (KF560S38IB-16)
+    price: 5990
+    source: datart
+  - link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
+    name: Operační paměť Kingston FURY Beast Black EXPO 16GB DDR5 5600MHz CL36 (KF556C36BBE-16)
     price: 5990
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-16-gb.html
@@ -43,7 +43,7 @@ categories:
     price: 6308
     source: datart
   32GB:
-  - avg_price: 14392
+  - avg_price: 14431
     link: https://www.datart.cz/pameti-ram-ddr5-32-gb.html
     name: Operační paměť Kingston FURY Beast Black RGB 32GB DDR5 5200MHz CL40 (KF552C40BBA-32)
     price: 11990
@@ -89,7 +89,7 @@ categories:
     price: 12490
     source: datart
   8GB:
-  - avg_price: 4143
+  - avg_price: 4140
     link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Impact 8GB DDR5 4800MHz CL 38 (KF548S38IB-8)
       - rozbaleno - 24 měsíců záruka
@@ -130,10 +130,10 @@ categories:
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Beast Black EXPO 8GB DDR5 5600MHz CL36 (KF556C36BBE-8)
-    price: 4111
+    price: 4115
     source: datart
   - link: https://www.datart.cz/pameti-ram-ddr5-8-gb.html
     name: Operační paměť Kingston FURY Beast Black 8GB DDR5 5600MHz CL40 (KF556C40BB-8)
     price: 4190
     source: datart
-last_updated: '2026-10-17 08:00:04'
+last_updated: '2026-10-18 08:00:04'
